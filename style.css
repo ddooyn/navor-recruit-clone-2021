@@ -362,6 +362,8 @@ details[open] summary::after {
   }
 
   .btn-modal {
+    width: 23px;
+    height: 23px;
     display: inline-block;
     background: none;
     border: none;
@@ -386,7 +388,7 @@ details[open] summary::after {
     z-index: 1000;
   }
 
-  /* .menu-mobile.on::after {
+  /* .popup-menu.on::after {
     content: "";
     position: fixed;
     top: 0;
@@ -396,7 +398,7 @@ details[open] summary::after {
     background-color: black;
     opacity: 0.6;
     z-index: 50;
-  } */
+  } 이렇게 하면 안된다. */
 
   .dimed {
     display: none;
