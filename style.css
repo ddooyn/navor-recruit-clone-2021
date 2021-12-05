@@ -45,6 +45,14 @@ body {
   background-color: white;
 }
 
+.btn-modal {
+  display: none;
+}
+
+.menu-mobile {
+  display: none;
+}
+
 .menu {
   margin: 0 auto;
   max-width: 980px;
@@ -54,6 +62,9 @@ body {
 .menu-logo {
   display: inline-block;
   margin-top: 23px;
+  color: #00cc49;
+  font-size: 19px;
+  font-weight: 900;
 }
 
 .menu-nav {
@@ -64,10 +75,26 @@ body {
 
 .menu-nav__ul {
   display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .menu-nav__ul li {
   margin-left: 26px;
+}
+
+.change-lang {
+  color: #a2a2a2;
+  padding-bottom: 7px;
+}
+
+.bi-person {
+  margin-right: 3px;
+}
+
+.bi-list {
+  display: none;
 }
 
 main {
@@ -131,7 +158,7 @@ main {
   padding: 55px 0;
   text-align: center;
   background-color: white;
-  z-index: -10;
+  /* z-index: -10; */
 }
 
 .main-nav__ul li:not(:last-child) {
@@ -141,27 +168,21 @@ main {
 .pop-new {
   position: relative;
   top: 0;
-  left: 12px;
+  left: 7px;
   color: white;
   font-size: 16px;
-  line-height: 20px;
-}
-.pop-new::before {
-  display: inline-block;
-  content: "";
-  position: absolute;
-  top: -3px;
-  left: -5px;
-  width: 30px;
-  height: 22px;
-  border-radius: 30px;
-  background-color: #2db400;
-  z-index: -1;
+  line-height: 16px;
 }
 
-.pop-new.circle::before {
-  left: -6px;
-  width: 22px;
+.pop-new {
+  border-radius: 30px;
+  background-color: #2db400;
+  padding: 3px 5px 1px;
+}
+
+.pop-new.circle {
+  border-radius: 50%;
+  padding: 3px 7px 1px;
 }
 
 .culture-report {
@@ -314,7 +335,9 @@ details[open] summary::after {
   line-height: 2em;
 }
 
+/* 미디어 쿼리 시작 */
 @media screen and (max-width: 980px) {
+  /* 헤더 */
   .header {
     position: absolute;
     background: none;
@@ -323,6 +346,132 @@ details[open] summary::after {
     color: white;
     padding: 0 20px;
   }
+
+  .menu-logo {
+    margin-top: 16px;
+    font-size: 17px;
+    color: #fff;
+  }
+
+  .menu-nav {
+    top: 14px;
+  }
+
+  .menu-nav__ul {
+    display: none;
+  }
+
+  .btn-modal {
+    display: inline-block;
+    background: none;
+    border: none;
+    color: white;
+  }
+
+  .bi-list {
+    display: inline-block;
+  }
+
+  /* 모바일 팝업메뉴 */
+  .popup-menu {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    padding: 0 30px 0 29px;
+    text-align: right;
+    background-color: #fff;
+    z-index: 1000;
+  }
+
+  /* .menu-mobile.on::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 50;
+  } */
+
+  .dimed {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 999;
+  }
+
+  .menu-mobile.on {
+    display: block;
+  }
+
+  .on .popup-menu,
+  .on .dimed {
+    display: block;
+  }
+
+  .menu-mobile h3 {
+    display: inline-block;
+    margin: 29px 0 25px;
+    color: #00cc49;
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  .menu-mobile__nb {
+    color: #00cc49;
+    font-size: 20px;
+  }
+
+  .menu-mobile__nb2 {
+    margin-top: 10px;
+    color: #808080;
+    font-size: 17px;
+  }
+
+  .menu-mobile__nb li,
+  .menu-mobile__nb2 li {
+    padding: 15px 0;
+  }
+
+  .menu-mobile__bot {
+    position: absolute;
+    right: 34px;
+    bottom: 28px;
+  }
+
+  .change-lang__mobile {
+    display: inline-block;
+    color: #808080;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .change-lang__mobile:hover {
+    color: #00cc49;
+  }
+
+  .rel-site__mobile {
+    width: 148px;
+    height: 25px;
+    border: 1px solid #e5e5e5;
+    background: none;
+    color: #808080;
+    font-size: 11px;
+    padding-left: 5px;
+  }
+
+  /* 메인 섹션 */
 
   main {
     margin: 0 auto;
@@ -356,26 +505,13 @@ details[open] summary::after {
   .pop-new {
     font-size: 14px;
   }
-  .pop-new::before {
-    display: inline-block;
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -4px;
-    width: 26px;
-    height: 19px;
-    border-radius: 30px;
-    background-color: #2db400;
-    z-index: -1;
-  }
-  .pop-new.circle::before {
-    left: -5px;
-    width: 19px;
-  }
+
+  /* 컬처리포트 */
 
   .culture-report {
-    margin: 10px 0 120px;
-    padding: 25px 20px 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 25px 20px 60px;
   }
 
   .culture-tit {
@@ -458,6 +594,12 @@ details[open] summary::after {
 
   .pc-view {
     display: inline-block;
+  }
+
+  .pc-view::after {
+    margin: 0 3px 0 6px;
+    display: inline-block;
+    content: "|";
   }
 
   .rel-site {
